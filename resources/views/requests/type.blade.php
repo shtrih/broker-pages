@@ -40,6 +40,8 @@
                             @endforelse
                         </tbody>
                     </table>
+
+                    {{$requests->links()}}
                 </div>
             </div>
         </div>

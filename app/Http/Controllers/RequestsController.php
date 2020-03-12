@@ -34,7 +34,7 @@ class RequestsController extends Controller
             abort(404);
         }
 
-        $requests = \App\Models\Request::byType($type)->get();
+        $requests = \App\Models\Request::byType($type)->paginate(6);
 
         return view('requests.type', compact('requests', 'type'));
     }
