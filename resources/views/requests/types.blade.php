@@ -28,16 +28,16 @@
                         <tbody>
                             @forelse ($requestTypes as $type)
                                 <tr>
-                                    <td><a href="/requests/{{$type->type}}">{{$type->type}}</a></td>
+                                    <td><a href="{{route('request-type', ['request_type' => $type->type])}}">{{$type->type}}</a></td>
                                     <td>{{$type->count_day}}</td>
                                     <td>{{$type->count_week}}</td>
                                     <td>{{$type->count_month}}</td>
                                     <td>{{$type->count_all}}</td>
-                                    <td><a class="btn btn-dark" href="/requests/{{$type->type}}/statistics" role="button">Статистика по дням</a></td>
+                                    <td><a class="btn btn-dark" href="{{route('request-type-stat', ['request_type' => $type->type])}}" role="button">Статистика по дням</a></td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5">Ничего нет</td>
+                                    <td colspan="6">Пусто</td>
                                 </tr>
                             @endforelse
                         </tbody>

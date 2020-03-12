@@ -19,17 +19,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->prefix('/broker')->group(function () {
     // Заявки
-    Route::get('/requests', 'RequestsController@index');
+    Route::get('/requests', 'RequestsController@index')->name('requests');
     // Статистика по заявкам
-    Route::get('/requests/statistics', 'HomeController@index');
+    Route::get('/requests/statistics', 'HomeController@index')->name('requests-stat');
     // Заявки конкретного типа
-    Route::get('/requests/{request_type}', 'HomeController@index');
+    Route::get('/requests/{request_type}', 'HomeController@index')->name('request-type');
     // Конкретная заявка
-    Route::get('/requests/{request_type}/{request_id}', 'HomeController@index');
+    Route::get('/requests/{request_type}/{request_id}', 'HomeController@index')->name('request-id');
     // Статистика по заявкам конкретного типа
-    Route::get('/requests/{request_type}/statistics', 'HomeController@index');
+    Route::get('/requests/{request_type}/statistics', 'HomeController@index')->name('request-type-stat');
 
     // Объявления
     Route::get('/advertisements', 'HomeController@index');
