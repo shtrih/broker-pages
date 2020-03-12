@@ -27,4 +27,15 @@ class RequestsController extends Controller
 
         return view('requests.types', compact('requestTypes'));
     }
+
+    public function requestsByType(string $type)
+    {
+        if (!in_array($type, \App\Models\Request::TYPES)) {
+            abort(404);
+        }
+
+        $requests = \App\Models\Request::byType($type)->get();
+
+        return view('requests.type', compact('requests', 'type'));
+    }
 }

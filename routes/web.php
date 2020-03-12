@@ -25,7 +25,7 @@ Route::middleware('auth')->prefix('/broker')->group(function () {
     // Статистика по заявкам
     Route::get('/requests/statistics', 'HomeController@index')->name('requests-stat');
     // Заявки конкретного типа
-    Route::get('/requests/{request_type}', 'HomeController@index')->name('request-type');
+    Route::get('/requests/{request_type}', 'RequestsController@requestsByType')->name('request-type');
     // Конкретная заявка
     Route::get('/requests/{request_type}/{request_id}', 'HomeController@index')->name('request-id');
     // Статистика по заявкам конкретного типа

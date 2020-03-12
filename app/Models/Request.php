@@ -29,4 +29,16 @@ class Request extends Model
         self::TYPE_OWN_PRICE,
         self::TYPE_QUESTION,
     ];
+
+    /**
+     * Scope a query to only include users of a given type.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  mixed  $type
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeByType($query, $type)
+    {
+        return $query->where('type', $type);
+    }
 }
