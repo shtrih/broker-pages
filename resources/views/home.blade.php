@@ -15,6 +15,10 @@
                     @endif
 
                     You are logged in!
+
+                    <ul>
+                        <li><a href="/requests">Заявки</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
