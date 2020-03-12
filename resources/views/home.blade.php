@@ -18,6 +18,10 @@
 
                     <ul>
                         <li><a href="{{route('requests')}}">Заявки</a></li>
+                        <li><a href="{{route('ads')}}">Объявления</a></li>
+                        <li><a href="{{route('messages')}}">Сообщения</a></li>
+                        <li><a href="{{route('vehicle-check')}}">Проверка автомобиля</a></li>
+                        <li><a href="{{route('settings')}}">Настройки</a></li>
                     </ul>
                 </div>
             </div>

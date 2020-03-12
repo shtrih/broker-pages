@@ -32,14 +32,14 @@ Route::middleware('auth')->prefix('/broker')->group(function () {
     Route::get('/requests/{request_type}/statistics', 'HomeController@index')->name('request-type-stat');
 
     // Объявления
-    Route::get('/advertisements', 'HomeController@index');
-    Route::get('/advertisements/{id}', 'HomeController@index');
+    Route::get('/advertisements', 'HomeController@index')->name('ads');
+    Route::get('/advertisements/{id}', 'HomeController@index')->name('ad');
     Route::get('/advertisements//{id}', 'HomeController@index');
 
     // Сообщения
-    Route::get('/messages', 'HomeController@index');
+    Route::get('/messages', 'HomeController@index')->name('messages');
     // Проверка автомобиля
-    Route::get('/vehicle-check', 'HomeController@index');
+    Route::get('/vehicle-check', 'HomeController@index')->name('vehicle-check');
     // Настройки
-    Route::get('/settings', 'HomeController@index');
+    Route::get('/settings', 'HomeController@index')->name('settings');
 });
