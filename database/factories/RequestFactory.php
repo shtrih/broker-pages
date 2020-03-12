@@ -21,5 +21,6 @@ $factory->define(Request::class, function (Faker $faker) {
         'transmission'   => $faker->optional()->word,
         'volume'         => $faker->optional()->randomFloat(2, 0, 5),
         'text'           => $faker->optional()->text(100),
+        'created_at'     => $faker->dateTimeBetween('-32 days'),
     ];
 });
