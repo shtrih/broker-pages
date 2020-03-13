@@ -7,7 +7,7 @@
             <a href="{{route('requests')}}">&laquo; Назад</a>
 
             <div class="card">
-                <div class="card-header">Заявки {{$type}}</div>
+                <div class="card-header">Заявки &laquo;@lang('requests/types.'.$type)&raquo;</div>
 
                 <div class="card-body">
                     @if (session('status'))

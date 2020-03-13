@@ -30,7 +30,7 @@
                         <tbody>
                             @forelse ($requestTypes as $type)
                                 <tr>
-                                    <td><a href="{{route('request-type', ['request_type' => $type->type])}}">{{$type->type}}</a></td>
+                                    <td><a href="{{route('request-type', ['request_type' => $type->type])}}">@lang('requests/types.'.$type->type)</a></td>
                                     <td>{{$type->count_day}}</td>
                                     <td>{{$type->count_week}}</td>
                                     <td>{{$type->count_month}}</td>
